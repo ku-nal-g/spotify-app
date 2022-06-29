@@ -1,0 +1,195 @@
+<div *ngIf="isAddSongs" class="main-div mt-3">
+  <div class="child-div">
+    <h5 style="color: grey;">Top 10 Songs</h5>
+  </div>
+  <div class="btn-div">
+    <button (click)="addSongs()" class="add-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus"
+        viewBox="0 0 16 16">
+        <path
+          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+      </svg>
+      Add Song
+    </button>
+  </div>
+</div>
+
+<div *ngIf="isAddSongs" class="songs-list">
+  <div class="table-div">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Artwork</th>
+          <th scope="col">Song</th>
+          <th scope="col">Date of Release</th>
+          <th scope="col">Artists</th>
+          <th scope="col">Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of songsList;let i = index;">
+          <td><img [src]="data.imageUrl" width="100"></td>
+          <td>{{data.songname}}</td>
+          <td>{{data.release}}</td>
+          <td>{{data.artists}}</td>
+          <td>
+            <a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" class="bi bi-star"
+                viewBox="0 0 16 16">
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+              </svg>
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star"
+                viewBox="0 0 16 16">
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+              </svg>
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star"
+                viewBox="0 0 16 16">
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+              </svg>
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star"
+                viewBox="0 0 16 16">
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+              </svg>
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star"
+                viewBox="0 0 16 16">
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+              </svg>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-div mt-5">
+    <h5 style="color: grey;">Top 10 Artists</h5>
+  </div>
+  <div class="tables-div">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Artists</th>
+          <th scope="col">Date of Birth</th>
+          <th scope="col">Songs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of artistsList;let i = index;">
+          <td>{{data.artists}}</td>
+          <td>{{data.dob}}</td>
+          <td>{{data.songname}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="songs-form" *ngIf="!this.isAddSongs">
+  <div>
+    <h4 style="color: grey; font-weight: bolder;">Adding a new Song</h4>
+  </div>
+
+  <div class="form-div mt-5">
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <label>Song Name</label>
+        <input class="ms-4" style="border: 2px solid grey;" type="text">
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <label>Date Released</label>
+        <input class="ms-1" style="border: 2px solid grey;" type="text">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label>Artwork</label>
+        <input class="ms-5" style="border: 2px solid grey;" type="file" placeholder="Upload a file">
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <label>Artists</label>
+        <select class="ms-5" style="width: 20%; padding: 10px 8px 10px 8px;" aria-label="Default select example">
+         <option selected>Search</option>
+         <option value="1">
+           <input type="checkbox">
+           <label>Male</label>
+         </option>
+         <option value="2">Two</option>
+         <option value="3">Three</option>
+       </select>
+
+       <button data-toggle="modal" data-target="#addArtist" class="add-btn ms-5" style="padding: 8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus"
+        viewBox="0 0 16 16">
+        <path
+          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+      </svg>
+        Add Artist
+      </button>
+      </div>
+    </div>
+
+    <div class="row mt-5 ms-5">
+      <div class="col-md-12 ms-2">
+      <button class="cancel-btn me-3" (click)="cancel()">Cancel</button>
+      <button class="save-btn" (click)="save()">Save</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<!--Modal to add artist-->
+<div class="modal fade" id="addArtist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Artist</h5>
+        <button style="border: none; outline: none; background-color: white" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-dark" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form style="padding-right: 5%;">
+          <div class="form-group row mb-4">
+            <label for="inputEmail3" class="col-sm-4 col-form-label">Artist Name</label>
+            <div class="col-sm-8">
+              <input style="border: 3px solid grey;" type="text" class="form-control" >
+            </div>
+          </div>
+          <div class="form-group row mb-4">
+            <label for="inputPassword3" class="col-sm-4 col-form-label">Date Of Birth</label>
+            <div class="col-sm-8">
+              <input style="border: 3px solid grey;" type="date" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-4">
+            <label for="inputEmail3" class="col-sm-4 col-form-label">Artist Name</label>
+            <div class="col-sm-8">
+             <textarea style="border: 3px solid grey;" rows="4" cols="38"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" style="border: 1px solid grey;" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" data-dismiss="modal" class="btn btn-secondary">Done</button>
+      </div>
+    </div>
+  </div>
+</div>

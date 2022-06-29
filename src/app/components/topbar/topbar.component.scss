@@ -1,0 +1,29 @@
+.main-div{
+    display: flex;
+    background-color: rgb(180,180, 180);
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.home{
+    background-color: white;
+}
+.home a{
+    text-decoration: none;
+    color: grey;
+    font-weight: bolder;
+    padding: 10px 8px 8px 8px;
+    position: absolute;
+    background-color: white;
+    left: 4%;
+}
+.search input{
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+.icon {
+    padding-left: 25px;
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+    background-size: 20px;
+  }
