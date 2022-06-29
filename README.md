@@ -1,6 +1,10 @@
 # SpotifyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+(i) Clone thre project from URL
+(ii) install dependencies using command (npm i)
+(iii) bild the projet using ng serve --o
+(iv) project will start running on localhost:4200
 
 ## Development server
 
