@@ -11,13 +11,35 @@ export class SongsListService {
 
   artistsListUrl:string = 'assets/artists-list.json';
 
+  songsApiUrl:string = "http://localhost:83/api/Spotify/Top10Songs";
+
+  artistsApiUrl:string = 'http://localhost:83/api/Spotify/Top10Artist';
+
+  addSongApiUrl:string = 'http://localhost:83/api/Spotify/AddSong';
+
+  addArtistApiUrl:string = 'http://localhost:83/api/Spotify/AddArtist';
+
   constructor(private http:HttpClient) { }
 
-  get():Observable<any>{
-    return this.http.get(this.songsListUrl);
+  // get top 10 songs api
+
+  getTopSongs():Observable<any>{
+    return this.http.get(this.songsApiUrl);
   }
 
-  getData():Observable<any>{
-    return this.http.get(this.artistsListUrl);
+  //get top artists api 
+  getArtists():Observable<any>{
+    return this.http.get(this.artistsApiUrl);
   }
+
+  // add songs api url
+  postSongs(reqObj:any):Observable<any>{
+    return this.http.post(this.addSongApiUrl,reqObj);
+  }
+  
+  //add artists api url
+  postArtists(reqObj:any):Observable<any>{
+    return this.http.post(this.addArtistApiUrl,reqObj);
+  }
+
 }
