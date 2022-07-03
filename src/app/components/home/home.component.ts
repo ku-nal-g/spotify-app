@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
       this.artistsList = res;
     },
       (error) => {
-        console.log("error occcured ffrom api");
+        console.log("error occcured from api");
       })
   }
 
